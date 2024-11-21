@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/hd.png" alt="Produto 1">
+        </div>
+        <div class="product-info">
+            <h2>HD Externo Seagate Expansion 1TB</h2>
+            <p>O HD Externo Seagate Expansion 1TB oferece uma maneira simples e prática de expandir a capacidade de armazenamento de seu computador, console de videogame ou outros dispositivos. Com 1TB de capacidade, ele fornece amplo espaço para armazenar documentos, vídeos, fotos e jogos. A instalação é extremamente fácil, bastando conectá-lo via porta USB 3.0 para começar a usá-lo, sem necessidade de instalação de software adicional. O design é compacto e robusto, tornando-o ideal para quem precisa de uma solução portátil para backup e armazenamento. Além disso, o HD é compatível com USB 2.0 e 3.0, garantindo alta velocidade de transferência de dados, permitindo copiar ou acessar arquivos grandes rapidamente. Ideal para quem precisa de um armazenamento confiável, rápido e prático, o Seagate Expansion é uma excelente escolha para usuários domésticos e profissionais.
+
+            </p>
+        
+            <p><strong>Preço: R$ 300,00</strong></p>
+            <button onclick="addToCart('HD Externo Seagate Expansion 1TB', 300)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

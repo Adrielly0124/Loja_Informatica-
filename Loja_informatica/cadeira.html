@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/cadeira.png" alt="Produto 1">
+        </div>
+        <div class="product-info">
+            <h2>Cadeira Ergonômica DXRacer Formula Series </h2>
+            <p>A Cadeira Ergonômica DXRacer Formula Series é uma excelente escolha para quem busca conforto e suporte durante longas horas de trabalho ou jogo. Projetada com um design moderno e ajustável, ela oferece um apoio lombar ajustável e apoios de braço 2D, permitindo que você personalize a posição da cadeira para um encaixe perfeito. Seu encosto reclinável de até 135° e o assento ajustável oferecem conforto extra, ajudando a manter a postura correta e reduzir a pressão na coluna. O estofado em couro sintético de alta qualidade é macio e fácil de limpar, enquanto as rodas de nylon garantem mobilidade silenciosa e fluida em qualquer superfície. A base em alumínio oferece resistência e estabilidade, suportando até 120kg. Ideal para gamers, trabalhadores remotos ou qualquer pessoa que passe longas horas sentado, a DXRacer Formula Series proporciona o suporte ergonômico necessário para prevenir desconfortos e melhorar a produtividade.</p>
+        
+            <p><strong>Preço: R$ 1.500,00</strong></p>
+            <button onclick="addToCart('Cadeira Ergonômica DXRacer Formula Series', 1.500)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

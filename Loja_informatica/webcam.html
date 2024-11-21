@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/webcam.png" alt="Produto 1">
+        </div>
+        <div class="product-info">
+            <h2>Webcam Logitech C920 HD Pro</h2>
+            <p>A Webcam Logitech C920 HD Pro é uma excelente opção para quem precisa de qualidade de vídeo superior para videoconferências, gravações de conteúdo ou transmissões ao vivo. Com resolução Full HD 1080p, ela oferece imagens nítidas e detalhadas, mesmo em condições de baixa luz, graças à tecnologia Light Correction. O microfone estéreo embutido captura som claro e sem distorções, ideal para chamadas de vídeo e gravações. A instalação é simples, basta conectar via USB e o sistema reconhece automaticamente o dispositivo. Sua compatibilidade com as principais plataformas de videoconferência (como Zoom, Skype e Google Meet) a torna ideal para uso profissional e pessoal. Compacta e com um design ajustável, a C920 permite que você posicione facilmente a câmera para capturar o melhor ângulo, tornando-a a escolha perfeita para quem busca uma webcam de alta qualidade para uso diário.</p>
+        
+            <p><strong>Preço: R$ 450,00</strong></p>
+            <button onclick="addToCart('Webcam Logitech C920 HD Pro', 450)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

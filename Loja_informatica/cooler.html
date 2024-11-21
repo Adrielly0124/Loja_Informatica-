@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/cooler.png" alt="Produto 1">
+        </div>
+        <div class="product-info">
+            <h2> Cooler CPU Cooler Master Hyper 212 RGB</h2>
+            <p>O Cooler CPU Cooler Master Hyper 212 RGB é uma solução de resfriamento eficiente e de alto desempenho, ideal para quem busca melhorar a temperatura do processador em computadores de alto desempenho. Equipado com quatro tubos de calor (heatpipes) em cobre, ele oferece uma excelente transferência térmica, mantendo o processador em temperaturas mais baixas, mesmo sob carga intensa. A ventoinha RGB de 120mm é ajustável e oferece iluminação personalizada, permitindo que você combine o cooler com o estilo do seu setup. O design Tower e a tecnologia JetFlow garantem um fluxo de ar otimizado, proporcionando resfriamento eficaz sem gerar muito ruído. A instalação é fácil e compatível com diversas plataformas, incluindo Intel e AMD. O Cooler Master Hyper 212 RGB é ideal para quem busca um cooler de qualidade com um bom equilíbrio entre desempenho, estética e custo-benefício, garantindo maior durabilidade e estabilidade ao sistema.</p>
+        
+            <p><strong>Preço: R$ 250,00</strong></p>
+            <button onclick="addToCart('Cooler CPU Cooler Master Hyper 212 RGB', 250)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

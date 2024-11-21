@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/roteador.png" alt="Produto 1">
+        </div>
+        <div class="product-info">
+            <h2> Roteador TP-Link Archer C6</h2>
+            <p>O Roteador TP-Link Archer C6 é uma excelente opção para quem busca uma solução de conectividade eficiente e de fácil instalação para sua casa ou escritório. Com a tecnologia dual band, ele opera nas frequências de 2,4GHz (até 300Mbps) e 5GHz (até 867Mbps), permitindo que você aproveite a maior velocidade e menor interferência na banda de 5GHz, enquanto mantém a compatibilidade com dispositivos que utilizam 2,4GHz. Com um total de 1.200Mbps de velocidade combinada, o Archer C6 oferece cobertura ampla, ideal para streaming de vídeos em alta definição, jogos online e navegação sem interrupções. O roteador possui 4 portas LAN gigabit para conexões com fio rápidas e estáveis, além de uma porta WAN para a conexão com a internet. Com configuração simples via app e recursos como controle de acesso e QoS (Quality of Service), o Archer C6 é perfeito para famílias ou pequenas empresas que precisam de um roteador confiável.
+            </p>
+        
+            <p><strong>Preço: R$ 220,00</strong></p>
+            <button onclick="addToCart(' Roteador TP-Link Archer C6', 220)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

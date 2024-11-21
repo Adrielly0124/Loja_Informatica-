@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/SSD.png" alt="Produto 1">
+        </div>
+        <div class="product-info">
+            <h2> SSD Kingston A2000 500GB</h2>
+            <p>O SSD Kingston A2000 500GB é uma excelente opção para quem busca melhorar o desempenho do computador com um armazenamento rápido e confiável. Com a tecnologia NVMe (Non-Volatile Memory Express), oferece uma velocidade de leitura de até 2200MB/s e gravação de até 2000MB/s, muito superior aos tradicionais discos rígidos (HDD) e SSDs SATA. Isso se traduz em inicializações mais rápidas, transferências de dados quase instantâneas e uma experiência geral mais ágil ao usar o sistema operacional, aplicativos e jogos. Com capacidade de 500GB, o A2000 oferece espaço suficiente para armazenar documentos, vídeos e até jogos mais pesados, sem comprometer a performance. O design compacto e sem partes móveis garante maior resistência a choques e vibrações, aumentando a durabilidade. Além disso, a instalação do A2000 é simples, sendo compatível com placas-mãe que suportam a interface M.2 PCIe. É ideal para quem busca uma atualização de desempenho com custo-benefício.
+            </p>
+        
+            <p><strong>Preço: R$ 350,00</strong></p>
+            <button onclick="addToCart(' SSD Kingston A2000 500GB', 350)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

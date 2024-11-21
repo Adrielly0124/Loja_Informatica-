@@ -1,0 +1,291 @@
+/* Reset de estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #060c5c;
+    padding: 10px 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Carrossel */
+  /* Estilo do container principal do carrossel */
+  .carrossel-container {
+    max-width: 100%;
+    overflow: hidden;  /* Esconde as imagens que estão fora da área visível */
+    position: relative;
+    margin: 0px;
+}
+  .carousel {
+    position: relative; /* Para posicionar os botões corretamente */
+    width: 80%;
+    max-width: 2300px;
+    overflow: hidden; /* Esconde as partes das imagens fora da área visível */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor */
+  }
+  .carousel-item {
+    flex: none;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  /* Container das imagens, com layout flexível para alinhá-las horizontalmente */
+  .carousel-images {
+    display: flex; /* Organiza as imagens lado a lado */
+    transition: transform 0.5s ease-in-out; /* Animação suave para a transição */
+  }
+  
+  /* Cada imagem ocupa 100% da largura do carrossel */
+  .carousel-images img {
+    width: 100%;
+    flex-shrink: 0; /* Evita que as imagens encolham */
+  }
+  
+  /* Efeito ao passar o mouse sobre os botões */
+  button:hover {
+    background-color: #0056b3; /* Fundo mais escuro */
+  }
+  
+  /* Botão para a esquerda */
+  .prev {
+    left: 10px; /* Posição à esquerda */
+  }
+  
+  /* Botão para a direita */
+  .next {
+    right: 10px; /* Posição à direita */
+  }
+
+
+/* Produtos */
+.products {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ffb347;
+    border: 2px solid #0056b3;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    padding: 10px;
+    background-color: #060c5c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Detalhe do Produto */
+.product-detail {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.product-image img {
+    max-width: 400px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.product-info {
+    max-width: 500px;
+}
+
+.product-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.product-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product-info .btn {
+    padding: 15px 20px;
+    background-color: #060c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.product-info .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Cadastro */
+.signup {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.signup h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.signup form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup label {
+    font-size: 16px;
+    text-align: left;
+}
+
+.signup input[type="text"],
+.signup input[type="email"],
+.signup input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup button {
+    padding: 15px;
+    background-color: #060c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background-color: #060c5c;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #060c5c;
+    color: white;
+    margin-top: 40px;
+}
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ffb347;
+    border: 2px solid #0056b3;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte */
+    justify-content: center; /* Centraliza os cards */
+    width: 100%; /* Largura total */
+    max-width: 1200px;
+    text-align: center;
+}
+.card button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card button:hover {
+    background-color: #0056b3;
+}
+
+h2{
+    text-align: center;
+    color: #060c5c;
+}
+.cart-item, button { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 0px;
+    padding: 10px 15px;
+    margin-top: 0px;
+    background-color: #060c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cart button:hover {
+background-color: #0056b3;
+}

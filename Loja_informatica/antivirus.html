@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/antivirus.png" alt="Produto 1">
+      
+        </div>
+        <div class="product-info">
+            <h2>Antivírus Kaspersky Total Security 1 Ano</h2>
+            <p>O Antivírus Kaspersky Total Security 1 Ano (3 Dispositivos) oferece proteção abrangente para seus dispositivos contra vírus, malwares, ransomware e outras ameaças cibernéticas. Com uma licença válida por 1 ano e suporte para até 3 dispositivos, é ideal para quem deseja proteger seu computador, smartphone e tablet com um único pacote. O software realiza varreduras rápidas e completas, identificando e removendo ameaças de forma eficiente, sem impactar o desempenho do sistema. Além da proteção contra vírus, o Kaspersky Total Security inclui recursos como Firewall, controle parental, proteção de pagamento online, e criptografia de arquivos. Ele também oferece proteção contra roubo de identidade e monitora a atividade online para detectar sites fraudulentos e tentativas de phishing. Com interface simples e intuitiva, é fácil de configurar e usar, proporcionando uma camada extra de segurança para usuários domésticos e pequenas empresas que buscam proteger seus dados e privacidade.</p>
+        
+            <p><strong>Preço: R$ 180,00</strong></p>
+            <button onclick="addToCart('Antivírus Kaspersky Total Security 1 Ano', 180)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

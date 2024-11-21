@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+        }
+        .cart { 
+            border: 1px solid #060c5c; 
+            padding: 10px; 
+            margin-top: 20px; 
+        }
+        .cart-item, button { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #060c5c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart button:hover {
+        background-color: #0056b3;
+        }
+</style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="/Loja_informatica/contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cart">
+        <h2>Meu carrinho</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">Total: R$ 0,00</p>
+        <button onclick="clearCart()">Limpar Carrinho</button>
+        <a href="/Loja_informatica/index.html">Voltar aos Produtos</a>
+    </div>
+
+    <script>
+        // Atualizar exibição do carrinho ao carregar a página
+        function updateCart() {
+            const cartItemsDiv = document.getElementById("cart-items");
+            const totalPriceP = document.getElementById("total-price");
+
+            // Recuperar carrinho do localStorage
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Limpar exibição atual
+            cartItemsDiv.innerHTML = "";
+
+            // Recalcular o total
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+
+                // Adicionar item ao HTML do carrinho
+                const cartItemDiv = document.createElement("div");
+                cartItemDiv.classList.add("cart-item");
+                cartItemDiv.innerHTML = `
+                    <span>${item.name} - R$ ${item.price.toFixed(2)}</span>
+                    <button onclick="removeFromCart(${index})">Remover</button>
+                `;
+                cartItemsDiv.appendChild(cartItemDiv);
+            });
+
+            totalPriceP.textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+
+        // Remover item do carrinho
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCart();
+        }
+
+        // Limpar o carrinho
+        function clearCart() {
+            localStorage.removeItem("cart");
+            updateCart();
+        }
+
+        // Atualizar carrinho ao carregar a página
+        window.onload = updateCart;
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+   
+</body>
+</html>
+
+
+

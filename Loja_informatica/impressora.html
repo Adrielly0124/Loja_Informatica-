@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul><img src="/Loja_informatica/img/logoo.png"></br></ul>
+            <ul>
+                <li><a href="/Loja_informatica/index.html">Início</a></li>
+                <li><a href="/Loja_informatica/cadastre-se.html">Cadastre-se</a></li>
+                <li><a href="/Loja_informatica/carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="product-detail">
+        <div class="product-image">
+            <img src="/Loja_informatica/imgprod/impressora.png" alt="Produto 1">
+        </div>
+        <div class="product-info">
+            <h2>  Impressora Multifuncional HP DeskJet Ink Advantage 2776</h2>
+            <p>A Impressora Multifuncional HP DeskJet Ink Advantage 2776 é uma solução compacta e eficiente para quem busca praticidade e economia. Com funções de impressão, cópia e digitalização, ela atende perfeitamente a necessidades domésticas ou de pequenos escritórios. A impressão é feita com a tecnologia jato de tinta, oferecendo resultados nítidos e coloridos, seja para documentos ou fotos. A conectividade sem fio permite que você imprima diretamente do seu smartphone ou tablet via Wi-Fi, além de suportar a impressão pelo aplicativo HP Smart, facilitando o envio de documentos para impressão de qualquer lugar. A custo-benefício é um dos maiores atrativos da HP DeskJet 2776, já que ela foi projetada para reduzir o custo de impressão com cartuchos de tinta eficientes. Seu design compacto ocupa pouco espaço, sendo ideal para quem tem um ambiente de trabalho limitado. Além disso, é fácil de configurar e operar.</p>
+        
+            <p><strong>Preço: R$ 500,00</strong></p>
+            <button onclick="addToCart('Impressora Multifuncional HP DeskJet Ink Advantage 2776', 500)">Adicionar ao carrinho</button>
+        </div>
+       
+
+    <script>
+        // Adiciona o produto ao carrinho no localStorage
+        function addToCart(productName, productPrice) {
+            // Recuperar o carrinho atual do localStorage (ou inicializar vazio)
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Adicionar item ao carrinho
+            cart.push({ name: productName, price: productPrice });
+
+            // Atualizar o localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Techstore</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
